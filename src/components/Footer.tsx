@@ -9,8 +9,8 @@ const Footer: React.FC = () => {
       <div className="section-container">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold text-primary">
-              Portfolio<span className="text-secondary">.</span>
+            <h2 className="text-2xl font-bold text-primary group">
+              Portfolio<span className="text-secondary inline-block transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">.</span>
             </h2>
             <p className="mt-2 text-muted-foreground max-w-md">
               Creating beautiful digital experiences with clean code and user-centered design.
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               <h3 className="font-semibold mb-3">Quick Links</h3>
               <ul className="space-y-2">
                 {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
-                  <li key={item}>
+                  <li key={item} className="transition-transform duration-300 hover:translate-x-1">
                     <a 
                       href={`#${item.toLowerCase()}`} 
                       className="text-muted-foreground hover:text-secondary transition-colors"
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                   { name: 'Twitter', url: 'https://twitter.com' },
                   { name: 'Email', url: 'mailto:hello@example.com' },
                 ].map((item) => (
-                  <li key={item.name}>
+                  <li key={item.name} className="transition-transform duration-300 hover:translate-x-1">
                     <a 
                       href={item.url} 
                       target="_blank" 
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
           </p>
           
           <p className="text-muted-foreground mt-2 md:mt-0">
-            Designed & Built with <span className="text-secondary">♥</span>
+            Designed & Built with <span className="text-secondary inline-block hover:animate-pulse cursor-default">♥</span>
           </p>
         </div>
       </div>

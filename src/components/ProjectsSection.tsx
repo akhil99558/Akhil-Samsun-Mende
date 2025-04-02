@@ -1,129 +1,88 @@
 
-import React, { useState } from 'react';
-import { cn } from "@/lib/utils";
+import React from 'react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-featured online store with product listings, cart functionality, and secure checkout.',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    category: 'web',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-    demoLink: '#',
-    codeLink: '#',
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce solution with product management, cart functionality, and secure checkout.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    github: "https://github.com",
+    demo: "https://example.com"
   },
   {
-    id: 2,
-    title: 'Task Management App',
-    description: 'A productivity app that helps users organize tasks with drag-and-drop functionality and collaboration features.',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    category: 'app',
-    technologies: ['React', 'Firebase', 'Tailwind CSS'],
-    demoLink: '#',
-    codeLink: '#',
+    title: "Task Management App",
+    description: "A task management application with drag-and-drop functionality, user authentication, and real-time updates.",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    tags: ["React", "Firebase", "Tailwind", "DnD"],
+    github: "https://github.com",
+    demo: "https://example.com"
   },
   {
-    id: 3,
-    title: 'Portfolio Website',
-    description: 'A responsive portfolio site showcasing projects and skills with smooth animations and dark mode.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    category: 'web',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    demoLink: '#',
-    codeLink: '#',
+    title: "Portfolio Website",
+    description: "A responsive portfolio website showcasing projects and skills with modern design principles.",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    tags: ["React", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com",
+    demo: "https://example.com"
   },
-  {
-    id: 4,
-    title: 'Weather Dashboard',
-    description: 'A real-time weather app that displays forecasts and weather data with interactive visualizations.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    category: 'app',
-    technologies: ['JavaScript', 'Weather API', 'Chart.js', 'CSS'],
-    demoLink: '#',
-    codeLink: '#',
-  },
-];
-
-const categories = [
-  { id: 'all', name: 'All' },
-  { id: 'web', name: 'Web' },
-  { id: 'app', name: 'App' },
 ];
 
 const ProjectsSection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-
-  const filteredProjects = activeCategory === 'all'
-    ? projects
-    : projects.filter(project => project.category === activeCategory);
-
   return (
-    <section id="projects" className="py-20 bg-card">
+    <section id="projects" className="py-20">
       <div className="section-container">
         <h2 className="section-title">My Projects</h2>
+        <p className="max-w-2xl mb-12 text-muted-foreground">
+          Here are some of my recent projects. I've worked on various applications ranging from e-commerce platforms to interactive web apps.
+        </p>
         
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1 bg-background rounded-lg">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={cn(
-                  "px-6 py-2 rounded-md transition-all duration-300",
-                  activeCategory === category.id 
-                    ? "bg-secondary text-primary-foreground" 
-                    : "hover:bg-muted"
-                )}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="project-card group">
-              <div className="relative overflow-hidden aspect-video">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <Card 
+              key={index} 
+              className="overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-secondary/20 group"
+            >
+              <div className="relative w-full h-48 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="px-3 py-1 bg-background text-sm rounded-full">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex gap-4">
-                  <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="button-primary text-sm px-4 py-2">
-                    Live Demo
-                  </a>
-                  <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="px-4 py-2 border border-secondary text-secondary rounded-md text-sm transition-all duration-300 hover:bg-secondary/10">
-                    View Code
-                  </a>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
+                  <div className="flex gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span 
+                        key={tagIndex} 
+                        className="px-2 py-1 bg-secondary/80 text-xs rounded-md text-white font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+              
+              <CardHeader>
+                <CardTitle className="text-xl group-hover:text-secondary transition-colors duration-300">{project.title}</CardTitle>
+                <CardDescription className="line-clamp-2">{project.description}</CardDescription>
+              </CardHeader>
+              
+              <CardFooter className="flex justify-between">
+                <Button variant="outline" size="sm" className="group/btn transition-all duration-200 hover:border-secondary">
+                  <Github className="mr-2 h-4 w-4 transition-transform duration-200 group-hover/btn:scale-110" />
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">Code</a>
+                </Button>
+                <Button variant="outline" size="sm" className="group/btn transition-all duration-200 hover:border-secondary">
+                  <ExternalLink className="mr-2 h-4 w-4 transition-transform duration-200 group-hover/btn:scale-110" />
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer">Demo</a>
+                </Button>
+              </CardFooter>
+            </Card>
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <a href="#" className="inline-flex items-center button-primary">
-            View All Projects
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </a>
         </div>
       </div>
     </section>

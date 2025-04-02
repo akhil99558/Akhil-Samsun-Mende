@@ -25,15 +25,15 @@ const tools = [
 
 const SkillProgress: React.FC<{ name: string; level: number }> = ({ name, level }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4 group">
       <div className="flex justify-between mb-1">
-        <span className="font-medium">{name}</span>
+        <span className="font-medium group-hover:text-secondary transition-colors duration-300">{name}</span>
         <span className="text-secondary">{level}%</span>
       </div>
-      <div className="w-full bg-muted rounded-full h-2.5">
+      <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
         <div 
-          className="bg-gradient-to-r from-secondary to-blue-500 h-2.5 rounded-full"
-          style={{ width: `${level}%` }}
+          className="bg-gradient-to-r from-secondary to-blue-500 h-2.5 rounded-full transition-all duration-700 ease-out"
+          style={{ width: `${level}%`, transformOrigin: 'left' }}
         ></div>
       </div>
     </div>
@@ -60,8 +60,8 @@ const SkillsSection: React.FC = () => {
             <h3 className="text-xl font-semibold mb-6">Tools & Technologies</h3>
             <div className="grid grid-cols-2 gap-4">
               {tools.map((tool) => (
-                <div key={tool} className="skill-card">
-                  <p className="text-lg font-medium">{tool}</p>
+                <div key={tool} className="skill-card group">
+                  <p className="text-lg font-medium transition-colors duration-300 group-hover:text-secondary">{tool}</p>
                 </div>
               ))}
             </div>
@@ -89,11 +89,11 @@ const SkillsSection: React.FC = () => {
                 description: 'Ensure quality and deploy to production'
               }
             ].map((step, index) => (
-              <div key={index} className="p-6 border border-border rounded-lg hover:border-secondary/50 transition-colors">
-                <div className="w-12 h-12 flex items-center justify-center bg-secondary/10 text-secondary rounded-lg text-xl font-bold mb-4">
+              <div key={index} className="p-6 border border-border rounded-lg group transition-all duration-300 hover:border-secondary/50 hover:-translate-y-2 hover:shadow-lg">
+                <div className="w-12 h-12 flex items-center justify-center bg-secondary/10 text-secondary rounded-lg text-xl font-bold mb-4 transition-all duration-300 group-hover:bg-secondary/20">
                   {index + 1}
                 </div>
-                <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
+                <h4 className="text-lg font-semibold mb-2 transition-colors duration-300 group-hover:text-secondary">{step.title}</h4>
                 <p className="text-muted-foreground">{step.description}</p>
               </div>
             ))}

@@ -24,19 +24,19 @@ const AboutSection: React.FC = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#" className="button-primary">
-                Download CV
+              <a href="#" className="button-primary group">
+                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">Download CV</span>
               </a>
             </div>
           </div>
           
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-secondary/20 to-blue-500/20 rounded-lg blur-xl opacity-70"></div>
-            <div className="relative aspect-square rounded-lg overflow-hidden border-2 border-secondary/50">
+          <div className="relative group animate-float">
+            <div className="absolute -inset-4 bg-gradient-to-r from-secondary/20 to-blue-500/20 rounded-lg blur-xl opacity-70 transition-all duration-500 group-hover:opacity-100"></div>
+            <div className="relative aspect-square rounded-lg overflow-hidden border-2 border-secondary/50 transition-all duration-300 group-hover:border-secondary group-hover:shadow-lg">
               <img 
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="John Doe" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
           </div>
@@ -49,8 +49,8 @@ const AboutSection: React.FC = () => {
             { number: '20+', label: 'Happy Clients' },
             { number: '10+', label: 'Open Source Contributions' }
           ].map((item, index) => (
-            <div key={index} className="text-center p-6 bg-background rounded-lg shadow-lg">
-              <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-2">{item.number}</h3>
+            <div key={index} className="text-center p-6 bg-background rounded-lg shadow-lg transition-all duration-300 hover:shadow-secondary/20 hover:-translate-y-2 hover:bg-background/80">
+              <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-2 transition-transform duration-300 hover:scale-110">{item.number}</h3>
               <p className="text-muted-foreground">{item.label}</p>
             </div>
           ))}

@@ -31,8 +31,8 @@ const Navbar: React.FC = () => {
       )}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold text-primary">
-          Portfolio<span className="text-secondary">.</span>
+        <a href="#home" className="text-2xl font-bold text-primary group">
+          Portfolio<span className="text-secondary inline-block transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">.</span>
         </a>
         
         {/* Desktop Navigation */}
@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-primary focus:outline-none"
+          className="md:hidden text-primary focus:outline-none transition-transform duration-200 hover:scale-110"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -72,13 +72,13 @@ const Navbar: React.FC = () => {
       
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-card py-4">
+        <div className="md:hidden bg-card py-4 animate-fade-in">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="nav-link capitalize text-left py-2"
+                className="nav-link capitalize text-left py-2 transition-transform duration-300 hover:translate-x-2"
               >
                 {item}
               </button>
