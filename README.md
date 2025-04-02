@@ -24,7 +24,7 @@ npm i
 
 # Step 4: Start the development server
 npm run dev
-'''
+```
 **Use GitHub Codespaces**
 
 - Navigate to the main page of your repository.
