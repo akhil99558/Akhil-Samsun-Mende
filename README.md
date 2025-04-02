@@ -43,7 +43,9 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-The project is currently deployed on :
-- vercel : [vercel deployment](https://akhil-samsun-mende.vercel.app/)
+## Live Deployment
 
-- AWS using AWS Amplify: [AWS Deployment](https://main.d1kmsc91eqkj1t.amplifyapp.com/)
+This project is currently deployed on multiple platforms:
+
+- **Vercel**: [akhil-samsun-mende.vercel.app](https://akhil-samsun-mende.vercel.app/)
+- **AWS Amplify**: [main.d1kmsc91eqkj1t.amplifyapp.com](https://main.d1kmsc91eqkj1t.amplifyapp.com/)
