@@ -38,10 +38,9 @@ const Footer: React.FC = () => {
               <h3 className="font-semibold mb-3">Connect</h3>
               <ul className="space-y-2">
                 {[
-                  { name: 'GitHub', url: 'https://github.com' },
-                  { name: 'LinkedIn', url: 'https://linkedin.com' },
-                  { name: 'Twitter', url: 'https://twitter.com' },
-                  { name: 'Email', url: 'mailto:hello@example.com' },
+                  { name: 'GitHub', url: 'https://github.com/akhil99558' },
+                  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/akhil-mende-b9a584136/' },
+                  { name: 'Email', url: 'akhilsamsunmende@gmail.com' },
                 ].map((item) => (
                   <li key={item.name} className="transition-transform duration-300 hover:translate-x-1">
                     <a 
@@ -61,12 +60,9 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground">
-            © {currentYear} John Doe. All rights reserved.
+            © {currentYear} Akhil Samsun Mende. All rights reserved.
           </p>
           
-          <p className="text-muted-foreground mt-2 md:mt-0">
-            Designed & Built with <span className="text-secondary inline-block hover:animate-pulse cursor-default">♥</span>
-          </p>
         </div>
       </div>
     </footer>

@@ -2,25 +2,25 @@
 import React from 'react';
 
 const skills = [
-  { name: 'HTML', level: 95 },
-  { name: 'CSS', level: 90 },
+  { name: 'Java', level: 95 },
+  { name: 'Python', level: 90 },
   { name: 'JavaScript', level: 85 },
   { name: 'TypeScript', level: 80 },
   { name: 'React', level: 90 },
-  { name: 'Node.js', level: 75 },
-  { name: 'Next.js', level: 85 },
-  { name: 'Tailwind CSS', level: 90 },
+  { name: 'Data Analysis', level: 90 },
+  { name: 'AWS', level: 85 },
+  { name: 'Docker', level: 70 },
 ];
 
 const tools = [
   'Visual Studio Code',
   'Git & GitHub',
-  'Figma',
+  'Java',
   'Docker',
   'AWS',
-  'Firebase',
-  'MongoDB',
-  'PostgreSQL',
+  'Python',
+  'MYSQL',
+  'Salesforce',
 ];
 
 const SkillProgress: React.FC<{ name: string; level: number }> = ({ name, level }) => {
