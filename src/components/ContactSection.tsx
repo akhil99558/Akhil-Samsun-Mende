@@ -96,7 +96,7 @@ const ContactSection: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder="Akhil Samsun Mende"
                   required
                   className="transition-all duration-300 focus:border-secondary focus:ring-secondary hover:border-secondary/60"
                 />
@@ -111,7 +111,7 @@ const ContactSection: React.FC = () => {
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
+                  placeholder="akhil@example.com"
                   required
                   className="transition-all duration-300 focus:border-secondary focus:ring-secondary hover:border-secondary/60"
                 />
